@@ -15,6 +15,10 @@ class School {
     }
   }
 
+  grade(grade) {
+    return this._roster[grade].sort();
+  }
+
 }
 
 export default School;
