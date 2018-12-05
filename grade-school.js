@@ -1,6 +1,6 @@
 class School {
   constructor() {
-    this._roster = {}
+    this._roster = {};
   }
 
   roster() {
@@ -9,14 +9,19 @@ class School {
 
   add(name, grade) {
     if (this._roster[grade]) {
-      return this._roster[grade].push(name);
+      this._roster[grade].push(name);
+      return this._roster[grade].sort()
     } else {
       return this._roster[grade] = [name];
     }
   }
 
   grade(grade) {
-    return this._roster[grade].sort();
+    if(this._roster[grade]) {
+      return this._roster[grade].sort();
+    } else {
+      return [];
+    }
   }
 
 }
